@@ -26,11 +26,12 @@ if __name__ == "__main__":
 
     fichier = open(sys.argv[5], "r")
     nom = fichier.readline()
+    print("Noms,Date,Montant percu, siganture et Observation")
     while nom != '':
         numeroMois = date.month
         nomJour = date.strftime("%A") 
         print(nom[:len(nom) - 1], end='') # afficher sans le \n de la ligne
-        print(" ==> " + jours[nomJour] + " " +str(date.day) + " " + mois[numeroMois - 1] + " " + str(date.year))
+        print("," + jours[nomJour] + " " +str(date.day) + " " + mois[numeroMois - 1] + " " + str(date.year) + ",,")
         nom = fichier.readline()
         duree = datetime.timedelta(days=decalage) # decaler les jours
         date = date + duree
